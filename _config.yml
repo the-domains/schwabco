@@ -1,0 +1,23 @@
+name: SchwabCo
+favicon: null
+layout_spectrum: 0.05164819094352424
+typography_spectrum: 0.008604861097410321
+cta:
+  domain: null
+  bucket: null
+  version: null
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+opengraph:
+  image: null
+  type: null
+  appId: null
+color:
+  brandColors: []
+  brandStrength: 0.9922520641703159
+  lightness: 0.052267001708969474
+  saturation: 0.4118948590476066
+  rhythmicContrast: 0.9871561895124614
+purpose: []
