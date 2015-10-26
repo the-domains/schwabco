@@ -3,11 +3,11 @@ inFeed: true
 hasPage: true
 inNav: false
 inLanguage: null
-starred: false
+starred: true
 keywords: []
 description: ''
-datePublished: '2015-10-26T19:03:53.019Z'
-dateModified: '2015-10-26T19:02:59.045Z'
+datePublished: '2015-10-26T19:04:14.925Z'
+dateModified: '2015-10-26T19:04:11.092Z'
 title: Programming and Me
 authors: []
 publisher:
