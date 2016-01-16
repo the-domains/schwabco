@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Programming and Me - SchwabCo</title><link href="../rss.xml" title="SchwabCo feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="a6c2d048-cb7e-44f4-878e-ac683a891fc9"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Programming and Me - SchwabCo</title><link href="../rss.xml" title="SchwabCo feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.17"><meta name="the-grid-solution" content="93f1f240-8d4f-48dd-ad03-277e5718e144"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -203,13 +203,6 @@ body {
 .stack {
   z-index: 1;
   transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-}
-.group,
-.aside,
-.decoration {
-  transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -270,10 +263,6 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
-.media iframe {
-  transition: 0.3s opacity ease-in;
-  -webkit-transition: 0.3s opacity ease-in;
-}
 h1 a,
 h2 a,
 h3 a {
@@ -294,15 +283,11 @@ a {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.text li {
-  margin-left: 1.5em;
-}
 .decoration {
   pointer-events: none;
 }
 .svg {
   position: relative;
-  background-color: currentColor;
 }
 .svg > svg {
   position: absolute;
@@ -328,6 +313,9 @@ a {
 .svg polyline {
   stroke: currentColor;
 }
+.decoration {
+  background-color: currentColor;
+}
 .svg {
   background-color: transparent;
 }
@@ -343,12 +331,39 @@ a {
   background-color: currentColor;
   content: "";
 }
-.colors-style-aside-border .publisher,
-.colors-style-aside-border .author {
-  padding: .4vw .6vw;
+.revealed,
+.revealed > * {
+  pointer-events: none;
 }
-.cover_only_header:first-of-type {
-  position: fixed;
+.revealed .aside,
+.revealed a {
+  pointer-events: all;
+}
+.revealed {
+  background-image: none !important;
+  background-color: none !important;
+}
+.stack,
+.group,
+.aside,
+.decoration,
+.media,
+html body a.media,
+.media img,
+.media picture,
+iframe {
+  min-width: 0;
+  min-height: 0;
+  transition-duration: .3s;
+  transition-property: transform, color, background-color, opacity, clip, z-index, border-width;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: .3s;
+  -webkit-transition-property: -webkit-transform, color, background-color, opacity, clip, z-index, border-width;
+  -webkit-transition-timing-function: ease-out;
+}
+.media img {
+  transition-property: transform, color, background-color;
+  -webkit-transition-property: -webkit-transform, color, background-color;
 }
 .decoration {
   z-index: 3;
@@ -361,7 +376,7 @@ ul {
 }
 .panel .heading {
   text-transform: uppercase;
-  letter-spacing: .03rem;
+  letter-spacing: 1px;
 }
 .listing:not(.open) .shadow-overlay {
   pointer-events: none;
@@ -376,17 +391,6 @@ ul {
 .group .text,
 .group .aside {
   z-index: 2;
-}
-.group button {
-  border-radius: 3px;
-  padding: 15px 25px;
-  margin-top: 36px;
-}
-.group button:hover {
-  opacity: .8;
-}
-.group .attribution {
-  overflow: hidden;
 }
 .group .attribution:after {
   display: block;
@@ -459,6 +463,7 @@ ul {
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.324rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -484,6 +489,7 @@ ul {
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -496,6 +502,7 @@ ul {
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -508,6 +515,7 @@ ul {
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -520,6 +528,7 @@ ul {
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -532,6 +541,7 @@ ul {
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -545,6 +555,7 @@ ul {
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -557,6 +568,7 @@ ul {
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -570,6 +582,7 @@ ul {
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -584,6 +597,7 @@ ul {
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.204rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -614,6 +628,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.484rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -639,6 +654,7 @@ display: none;
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -651,6 +667,7 @@ display: none;
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -663,6 +680,7 @@ display: none;
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -675,6 +693,7 @@ display: none;
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -687,6 +706,7 @@ display: none;
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -700,6 +720,7 @@ display: none;
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -712,6 +733,7 @@ display: none;
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -725,6 +747,7 @@ display: none;
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -739,6 +762,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.304rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -769,6 +793,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.644rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -794,6 +819,7 @@ display: none;
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -806,6 +832,7 @@ display: none;
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -818,6 +845,7 @@ display: none;
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -830,6 +858,7 @@ display: none;
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -842,6 +871,7 @@ display: none;
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -855,6 +885,7 @@ display: none;
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -867,6 +898,7 @@ display: none;
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -880,6 +912,7 @@ display: none;
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -894,6 +927,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.404rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -924,6 +958,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.964rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -949,6 +984,7 @@ display: none;
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -961,6 +997,7 @@ display: none;
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -973,6 +1010,7 @@ display: none;
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -985,6 +1023,7 @@ display: none;
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -997,6 +1036,7 @@ display: none;
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -1010,6 +1050,7 @@ display: none;
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -1022,6 +1063,7 @@ display: none;
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -1035,6 +1077,7 @@ display: none;
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -1049,6 +1092,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.604rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -1079,6 +1123,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -1104,6 +1149,7 @@ display: none;
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -1116,6 +1162,7 @@ display: none;
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -1128,6 +1175,7 @@ display: none;
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -1140,6 +1188,7 @@ display: none;
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -1152,6 +1201,7 @@ display: none;
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -1165,6 +1215,7 @@ display: none;
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -1177,6 +1228,7 @@ display: none;
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -1190,6 +1242,7 @@ display: none;
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -1204,6 +1257,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 15.754rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -1234,6 +1288,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav .group.heading { background-color: rgb(41, 35, 35); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav#u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav a:active { color: rgb(255, 255, 255); }
@@ -1259,6 +1314,7 @@ display: none;
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .text.paragraph a:hover { color: rgb(118, 111, 111); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual > .decoration.separator { color: rgb(199, 43, 43); }
+#u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b .group.textual { background-color: rgb(41, 35, 35); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a { color: rgb(209, 83, 83); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:hover { color: rgb(204, 204, 204); }
 #u-099f9abb-82aa-416b-a510-e64f76cb7f5b#u-099f9abb-82aa-416b-a510-e64f76cb7f5b a:active { color: rgb(255, 255, 255); }
@@ -1271,6 +1327,7 @@ display: none;
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 .group.column { background-color: rgb(41, 35, 35); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a { color: rgb(209, 83, 83); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:hover { color: rgb(204, 204, 204); }
 #u-c1959254-52d7-4c60-a682-d2308f0f77a3#u-c1959254-52d7-4c60-a682-d2308f0f77a3 a:active { color: rgb(255, 255, 255); }
@@ -1283,6 +1340,7 @@ display: none;
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d .group.column { background-color: rgb(41, 35, 35); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a { color: rgb(209, 83, 83); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:hover { color: rgb(204, 204, 204); }
 #u-580fa0ee-c996-4018-a6e2-c9b52ba8658d#u-580fa0ee-c996-4018-a6e2-c9b52ba8658d a:active { color: rgb(255, 255, 255); }
@@ -1295,6 +1353,7 @@ display: none;
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e .group.column { background-color: rgb(41, 35, 35); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a { color: rgb(209, 83, 83); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:hover { color: rgb(204, 204, 204); }
 #u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e#u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e a:active { color: rgb(255, 255, 255); }
@@ -1307,6 +1366,7 @@ display: none;
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 .group.column { background-color: rgb(41, 35, 35); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a { color: rgb(209, 83, 83); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:hover { color: rgb(204, 204, 204); }
 #u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61#u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61 a:active { color: rgb(255, 255, 255); }
@@ -1320,6 +1380,7 @@ display: none;
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 .group.column { background-color: rgb(41, 35, 35); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a { color: rgb(209, 83, 83); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:hover { color: rgb(204, 204, 204); }
 #u-742bcf2a-3808-4d1c-a40e-7398dd698139#u-742bcf2a-3808-4d1c-a40e-7398dd698139 a:active { color: rgb(255, 255, 255); }
@@ -1332,6 +1393,7 @@ display: none;
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 .group.column { background-color: rgb(41, 35, 35); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a { color: rgb(209, 83, 83); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:hover { color: rgb(204, 204, 204); }
 #u-2576dc40-7f07-4b12-8fb5-c99843674614#u-2576dc40-7f07-4b12-8fb5-c99843674614 a:active { color: rgb(255, 255, 255); }
@@ -1345,6 +1407,7 @@ display: none;
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph { color: rgb(242, 242, 242); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a { color: rgb(151, 70, 70); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column > .text.paragraph a:hover { color: rgb(118, 111, 111); }
+#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 .group.column { background-color: rgb(41, 35, 35); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a { color: rgb(209, 83, 83); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:hover { color: rgb(204, 204, 204); }
 #u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6#u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6 a:active { color: rgb(255, 255, 255); }
@@ -1359,6 +1422,7 @@ display: none;
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 15.754rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline { color: rgb(246, 213, 213); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading > .title.headline a:hover { color: rgb(228, 168, 168); }
+#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate .group.heading { background-color: rgb(0, 0, 0); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a { color: rgb(209, 83, 83); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:hover { color: rgb(204, 204, 204); }
 #u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate#u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate a:active { color: rgb(255, 255, 255); }
@@ -1376,7 +1440,7 @@ wbr.w1800{ display: block }
  #u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-3 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-b14c9fdb-28bc-427f-b00d-61c64b238383"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav"><div kind="group" index="heading" class="group heading group heading" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline-a">SchwabCo</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text stack textual" itemid="099f9abb-82aa-416b-a510-e64f76cb7f5b" itemtype="text" diff_index="4" index="textual" kind="stack" score="2.75" missed="0.25" tag="article" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b"><div kind="group" index="textual" class="group textual group textual" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-headline"><span class="text-decoration" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-headline-span">Programming and <wbr class="w480 w960"></wbr>Me</span></h1><h2 kind="title" index="subtitle" class="short short_subtitle short_title title subtitle title subtitle" specificity="0.25" itemprop="subtitle" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-subtitle"><span class="text-decoration" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-subtitle-span">A Programer&#x2019;s History</span></h2><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-paragraph"><p><span class="first-letter">B</span>efore writing about what I think the future of <wbr class="w480"></wbr>my <wbr class="w960"></wbr>own programming should <wbr class="w481"></wbr>look <wbr class="w961 w1799"></wbr>like, I thought <wbr class="w480"></wbr>it <wbr class="w960 w1800"></wbr>would be a good idea &#x2014; even if I&#x2019;m the only <wbr class="w480"></wbr>person <wbr class="w481 w960"></wbr>who&#x2019;d <wbr class="w961 w1799"></wbr>ever read this &#x2014; that I trace back the <wbr class="w480 w1800"></wbr>things <wbr class="w960"></wbr>that I remember about how <wbr class="w481 w961 w1799"></wbr>programming came <wbr class="w480"></wbr>into my <wbr class="w960"></wbr>life. I think that would make it easier for <wbr class="w480 w1800"></wbr>me to <wbr class="w481 w960 w961 w1799"></wbr>reflect about what I always dreamed <wbr class="w480"></wbr>programming would <wbr class="w960"></wbr>be. </p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="c1959254-52d7-4c60-a682-d2308f0f77a3" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3"><div kind="group" index="column" class="group column group column" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3-g-column-t-paragraph"><p><span class="first-letter">A</span>s a kid I saw my self as an avid &#x201C;Star Trek &#x2014; The <wbr class="w480 w960"></wbr>Next Generation&#x201D; fan. And I <wbr class="w481 w961 w1799"></wbr>still am &#x2014; even though <wbr class="w480 w960 w1800"></wbr>the original show is long off the screens. In <wbr class="w480 w481 w960"></wbr>particular, <wbr class="w961 w1799"></wbr>I remember I felt inspired by one of the <wbr class="w480 w960 w1800"></wbr>Enterprise&#x2019;s unsung <wbr class="w481"></wbr>heroes: the ship&#x2019;s <wbr class="w961 w1799"></wbr>Computer. The <wbr class="w480 w960"></wbr>all-powerful Enterprise Computer had very <wbr class="w481"></wbr>little <wbr class="w1800"></wbr>it <wbr class="w480 w960"></wbr>couldn&#x2019;t do <wbr class="w961 w1799"></wbr>(other than in cases where it advanced <wbr class="w480"></wbr>the <wbr class="w960"></wbr>plot). One <wbr class="w481"></wbr>would basically talk to the <wbr class="w961 w1799 w1800"></wbr>computer <wbr class="w480"></wbr>&#x2014; and <wbr class="w960"></wbr>it just do the thing it was suppose <wbr class="w481"></wbr>to do. As <wbr class="w480"></wbr>a kid in <wbr class="w960"></wbr>the late <wbr class="w961 w1799"></wbr>80's, my slim <wbr class="w1800"></wbr>experience with <wbr class="w480"></wbr>computers <wbr class="w960"></wbr>already <wbr class="w481"></wbr>taught me that we were a long way <wbr class="w480 w961 w1799"></wbr>from living <wbr class="w960"></wbr>in the Star Trek <wbr class="w1800"></wbr>future. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="580fa0ee-c996-4018-a6e2-c9b52ba8658d" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d"><div kind="group" index="column" class="group column group column" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d-g-column-t-paragraph"><p><span class="first-letter">M</span>y first actual attempt at programming was with a <wbr class="w480 w960"></wbr>language called <a href="http://en.wikipedia.org/wiki/Logo_%28programming_language%29" data-href="http://en.wikipedia.org/wiki/Logo_%28programming_language%29">Logo</a>. We <wbr class="w481"></wbr>were <wbr class="w961 w1799"></wbr>already taught about <wbr class="w480 w1800"></wbr>the <wbr class="w960"></wbr>&#x201C;Turtle&#x201D; &#x2014; a flickering green triangle on a <wbr class="w480 w481 w960"></wbr>monochrome <wbr class="w961 w1799"></wbr>screen &#x2014; that didn&#x2019;t look like any turtle <wbr class="w480 w960 w1800"></wbr>I&#x2019;ve ever seen (granted, <wbr class="w481"></wbr>I was 6, but <wbr class="w961 w1799"></wbr>still &#x2014; that <wbr class="w480 w960"></wbr>did <strong>not</strong> look like a turtle). I was disappointed to <wbr class="w480 w481 w960 w1800"></wbr>learn all we <wbr class="w961 w1799"></wbr>ended up doing was what seemed to me <wbr class="w480"></wbr>like <wbr class="w960"></wbr>a very complicated way <wbr class="w481"></wbr>of drawing <wbr class="w961 w1799"></wbr>squares and <wbr class="w480 w1800"></wbr>circles. <wbr class="w960"></wbr>Little did I know, that was the foundation <wbr class="w480"></wbr>for <wbr class="w481 w960"></wbr>understanding <wbr class="w961 w1799"></wbr>how programs work, and that I <wbr class="w480 w1800"></wbr>would <wbr class="w960"></wbr>revisit these paradigms 24 <wbr class="w481"></wbr>years later.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="d2a18ce5-cd00-457e-b96f-db9c1cbc064e" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e"><div kind="group" index="column" class="group column group column" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e-g-column-t-paragraph"><p><span class="first-letter">B</span>y the time I was 9, I already got my first VGA <wbr class="w480 w960"></wbr>screen, and a brand new Intel <wbr class="w481 w961 w1799"></wbr>80386 computer, <wbr class="w480 w1800"></wbr>complete <wbr class="w960"></wbr>with a 4X (!) CD-ROM drive. Now I could <wbr class="w480"></wbr>take control <wbr class="w481 w960 w961 w1799"></wbr>over my very own Enterprise, Hear <wbr class="w480 w1800"></wbr>Indiana Jones speak <wbr class="w960"></wbr>for the first time, and <wbr class="w481"></wbr>I <wbr class="w961 w1799"></wbr>could <wbr class="w480"></wbr>finally enjoy Simon&#x2019;s <wbr class="w960"></wbr>snarky comments with a <wbr class="w1800"></wbr>proper <wbr class="w480"></wbr>British accent. Of <wbr class="w481 w960 w961 w1799"></wbr>course, all this fun couldn&#x2019;t <wbr class="w480"></wbr>last forever &#x2014; my Mom <wbr class="w960"></wbr>has decided I was <wbr class="w1800"></wbr>spending <wbr class="w481 w961 w1799"></wbr>too <wbr class="w480"></wbr>much of my time on <wbr class="w960"></wbr>mindless games. Knowing I <wbr class="w480"></wbr>wouldn&#x2019;t go down without a <wbr class="w481 w960 w961 w1799"></wbr>fight, she <wbr class="w1800"></wbr>decided to <wbr class="w480"></wbr>harness my obsession for games <wbr class="w960"></wbr>for educational <wbr class="w480"></wbr>purposes: <wbr class="w481 w961 w1799"></wbr>she gave me my first real <wbr class="w960 w1800"></wbr>programming tool <wbr class="w480"></wbr>ever: Klik & Play.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="ad16a9ad-9f59-4213-a3ba-d462b03f6b61" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61"><div kind="group" index="column" class="group column group column" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61-g-column-t-paragraph"><p><span class="first-letter">T</span>he thing about Klik & Play that kept me coming back <wbr class="w480 w960"></wbr>was how easy it was to <wbr class="w481"></wbr>work <wbr class="w961 w1799"></wbr>with. I could pretty <wbr class="w480 w1800"></wbr>much <wbr class="w960"></wbr>reason about most games I built, because there <wbr class="w480 w481"></wbr>was <wbr class="w960 w961 w1799"></wbr>almost no background knowledge required. The <wbr class="w480 w1800"></wbr>program <wbr class="w960"></wbr>came in a big white <wbr class="w481"></wbr>box, <wbr class="w961 w1799"></wbr>with a thick, <wbr class="w480"></wbr>detailed <wbr class="w960"></wbr>instruction book. Step by step, I learned <wbr class="w480 w1800"></wbr>about <wbr class="w481 w960 w961 w1799"></wbr>conditionals, about loops and functions &#x2014; <wbr class="w480"></wbr>without <wbr class="w960"></wbr>really learning any syntax <wbr class="w481"></wbr>of <wbr class="w961 w1799"></wbr>any particular <wbr class="w480 w1800"></wbr>language. <wbr class="w960"></wbr>Of course, I didn&#x2019;t know it at the time &#x2014; <wbr class="w480"></wbr>I didn&#x2019;t <wbr class="w481 w960"></wbr>even <wbr class="w961 w1799"></wbr>really think about <strong>how</strong> it worked, <wbr class="w1800"></wbr>only <wbr class="w480"></wbr>that it <wbr class="w960"></wbr>did. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="742bcf2a-3808-4d1c-a40e-7398dd698139" itemtype="h4" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139"><div kind="group" index="column" class="group column group column" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139-g-column-t-paragraph"><p><span class="first-letter">A</span>s time passed, I learned more about my computer, <wbr class="w480"></wbr>and <wbr class="w960"></wbr>about other programming <wbr class="w481 w961 w1799"></wbr>languages. But there <wbr class="w1800"></wbr>was <wbr class="w480"></wbr>one <wbr class="w960"></wbr>language that dominated over all others: Visual <wbr class="w480 w481 w961 w1799"></wbr>Basic. <wbr class="w960"></wbr>It reminded me of the KnP interface &#x2014; <wbr class="w1800"></wbr>You <wbr class="w480"></wbr>create <wbr class="w960"></wbr>things on the screen, <wbr class="w481 w961 w1799"></wbr>and they do things. The <wbr class="w480"></wbr>code I <wbr class="w960"></wbr>had to plug into the various <wbr class="w1800"></wbr>components of <wbr class="w480"></wbr>the <wbr class="w481 w961 w1799"></wbr>page <wbr class="w960"></wbr>was almost like a black box to me. I <wbr class="w480"></wbr>understood parts <wbr class="w960"></wbr>of it, but mostly <wbr class="w481"></wbr>it <wbr class="w961 w1799"></wbr>was <wbr class="w1800"></wbr>no more <wbr class="w480"></wbr>than 2&#x2013;3 lines of <wbr class="w960"></wbr>code, making the component do very <wbr class="w480"></wbr>simple <wbr class="w481"></wbr>things. </p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>F</span>rom that point on, I was obsessed with programing &#x2014; <wbr class="w480 w960"></wbr>but things kept becoming <wbr class="w481 w961 w1799"></wbr>harder and harder for <wbr class="w1800"></wbr>me to <wbr class="w480 w960"></wbr>understand on my own. I kept using Visual Basic <wbr class="w481"></wbr>for <wbr class="w480 w961 w1799"></wbr>my <wbr class="w960"></wbr>own pet projects, but tried my best to <wbr class="w1800"></wbr>learn <wbr class="w480"></wbr>about C++ <wbr class="w960"></wbr>and Java. None <wbr class="w481"></wbr>of those <wbr class="w961 w1799"></wbr>really took &#x2014; I <wbr class="w480"></wbr>felt like the <wbr class="w960"></wbr>task was too daunting. I <wbr class="w1800"></wbr>basically <wbr class="w480 w481"></wbr>stopped <wbr class="w961 w1799"></wbr>programming <wbr class="w960"></wbr>altogether by the time I joined <wbr class="w480"></wbr>the army, and didn&#x2019;t <wbr class="w481 w960"></wbr>program again <wbr class="w961 w1799 w1800"></wbr>until 4 years <wbr class="w480"></wbr>later. </p><h4><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Innocence Lost</h4></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_medium_paragraph w_medium_text stack column" itemid="2576dc40-7f07-4b12-8fb5-c99843674614" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-2576dc40-7f07-4b12-8fb5-c99843674614"><div kind="group" index="column" class="group column group column" id="u-2576dc40-7f07-4b12-8fb5-c99843674614-g-column"><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-2576dc40-7f07-4b12-8fb5-c99843674614-g-column-t-paragraph"><p><span class="first-letter">A</span>fter the break I took from programming, I came back <wbr class="w480 w960"></wbr>through the farthest <wbr class="w481"></wbr>thing <wbr class="w961 w1799"></wbr>from visual language <wbr class="w480 w960 w1800"></wbr>imaginable &#x2014; Bash. From that point on, I learned <wbr class="w481"></wbr>the <wbr class="w480 w960 w961 w1799"></wbr>languages everybody else was using around me &#x2014; <wbr class="w1800"></wbr>and <wbr class="w480 w960"></wbr>with every new <wbr class="w481"></wbr>language, I <wbr class="w961 w1799"></wbr>dove into a world of <wbr class="w480 w960"></wbr>dependencies, ever growing complexities and <wbr class="w480 w481 w1800"></wbr>functional <wbr class="w960 w961 w1799"></wbr>hierarchies. The full scale of what it <wbr class="w480"></wbr>meant to build <wbr class="w960"></wbr>a meaningful <wbr class="w481"></wbr>computer <wbr class="w961 w1799"></wbr>program made <wbr class="w1800"></wbr>me <wbr class="w480"></wbr>feel like I was <wbr class="w960"></wbr>only getting farther and farther <wbr class="w480"></wbr>from <wbr class="w481"></wbr>the Star <wbr class="w961 w1799"></wbr>Trek <wbr class="w960"></wbr>fantasy. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="14adfe9e-737b-4ee5-8db3-a1d2b85436c6" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6"><div kind="group" index="column" class="group column group column" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6-g-column-t-paragraph"><p><span class="first-letter">M</span>y first big Bash program extracted information from <wbr class="w480 w960"></wbr>lines of logs, and <wbr class="w481"></wbr>created <wbr class="w961 w1799"></wbr>sanitized data for <wbr class="w480 w1800"></wbr>reports <wbr class="w960"></wbr>I built with Excel. Thinking back on it, <wbr class="w480 w481"></wbr>Excel started <wbr class="w960 w961 w1799"></wbr>as my main programming tool, using the <wbr class="w480 w1800"></wbr>very useful <wbr class="w960"></wbr>suite of <wbr class="w481"></wbr>built-in, (like <wbr class="w961 w1799"></wbr>VLOOKUP and <wbr class="w480"></wbr>others) &#x2014; <wbr class="w960"></wbr>building layers of ever shrinking data <wbr class="w480 w481 w1800"></wbr>sets <wbr class="w960"></wbr>represented on <wbr class="w961 w1799"></wbr>different sheets, each sheet <wbr class="w480"></wbr>with it&#x2019;s <wbr class="w960"></wbr>own set of <wbr class="w481"></wbr>responsibilities. With Bash, I <wbr class="w480 w961 w1799 w1800"></wbr>learned how <wbr class="w960"></wbr>to parse text, and how to apply <wbr class="w481"></wbr>logic to <wbr class="w480"></wbr>my process. <wbr class="w960"></wbr>My love affair <wbr class="w961 w1799"></wbr>with Bash didn&#x2019;t last <wbr class="w480 w1800"></wbr>very long. I was <wbr class="w481 w960"></wbr>trying to build more sophisticated <wbr class="w480 w961 w1799"></wbr>reports, and having <wbr class="w960"></wbr>my programming mojo <wbr class="w481"></wbr>partially <wbr class="w480 w1800"></wbr>back, it was time to <wbr class="w960"></wbr>move on. </p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>F</span>or next couple of years I used Perl and PHP <wbr class="w480 w960"></wbr>interchangeably. Mostly for <wbr class="w481"></wbr>building <wbr class="w961 w1799"></wbr>internal <wbr class="w480 w960"></wbr>reporting <wbr class="w1800"></wbr>tools, but I was really looking at <wbr class="w480"></wbr>becoming <wbr class="w960"></wbr>a Web <wbr class="w481"></wbr>Master. I <wbr class="w961 w1799"></wbr>started diving into PHP <wbr class="w480"></wbr>frameworks, <wbr class="w960"></wbr>and <wbr class="w1800"></wbr>discovered Drupal, <wbr class="w481"></wbr>Wordpress, and <wbr class="w480"></wbr>later <wbr class="w961 w1799"></wbr>on <wbr class="w960"></wbr>CodeIgniter and Symphony.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline-a">SchwabCo feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-b14c9fdb-28bc-427f-b00d-61c64b238383"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-mobile-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav"><div kind="group" index="heading" class="group heading group heading" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-nav-g-heading-t-headline-a">SchwabCo</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text stack textual" itemid="099f9abb-82aa-416b-a510-e64f76cb7f5b" itemtype="text" diff_index="4" index="textual" kind="stack" score="2.75" missed="0.25" tag="article" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b"><div kind="group" index="textual" class="group textual group textual" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-headline"><span class="text-decoration" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-headline-span">Programming and <wbr class="w480 w960"></wbr>Me</span></h1><h2 kind="title" index="subtitle" class="short short_subtitle short_title title subtitle title subtitle" specificity="0.25" itemprop="subtitle" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-subtitle"><span class="text-decoration" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-subtitle-span">A Programer&#x2019;s History</span></h2><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-t-paragraph"><p><span class="first-letter">B</span>efore writing about what I think the future of <wbr class="w480"></wbr>my <wbr class="w960"></wbr>own programming should <wbr class="w481"></wbr>look <wbr class="w961 w1799"></wbr>like, I thought <wbr class="w480"></wbr>it <wbr class="w960 w1800"></wbr>would be a good idea &#x2014; even if I&#x2019;m the only <wbr class="w480"></wbr>person <wbr class="w481 w960"></wbr>who&#x2019;d <wbr class="w961 w1799"></wbr>ever read this &#x2014; that I trace back the <wbr class="w480 w1800"></wbr>things <wbr class="w960"></wbr>that I remember about how <wbr class="w481 w961 w1799"></wbr>programming came <wbr class="w480"></wbr>into my <wbr class="w960"></wbr>life. I think that would make it easier for <wbr class="w480 w1800"></wbr>me to <wbr class="w481 w960 w961 w1799"></wbr>reflect about what I always dreamed <wbr class="w480"></wbr>programming would <wbr class="w960"></wbr>be. </p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-099f9abb-82aa-416b-a510-e64f76cb7f5b-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="c1959254-52d7-4c60-a682-d2308f0f77a3" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3"><div kind="group" index="column" class="group column group column" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-c1959254-52d7-4c60-a682-d2308f0f77a3-g-column-t-paragraph"><p><span class="first-letter">A</span>s a kid I saw my self as an avid &#x201C;Star Trek &#x2014; The <wbr class="w480 w960"></wbr>Next Generation&#x201D; fan. And I <wbr class="w481 w961 w1799"></wbr>still am &#x2014; even though <wbr class="w480 w960 w1800"></wbr>the original show is long off the screens. In <wbr class="w480 w481 w960"></wbr>particular, <wbr class="w961 w1799"></wbr>I remember I felt inspired by one of the <wbr class="w480 w960 w1800"></wbr>Enterprise&#x2019;s unsung <wbr class="w481"></wbr>heroes: the ship&#x2019;s <wbr class="w961 w1799"></wbr>Computer. The <wbr class="w480 w960"></wbr>all-powerful Enterprise Computer had very <wbr class="w481"></wbr>little <wbr class="w1800"></wbr>it <wbr class="w480 w960"></wbr>couldn&#x2019;t do <wbr class="w961 w1799"></wbr>(other than in cases where it advanced <wbr class="w480"></wbr>the <wbr class="w960"></wbr>plot). One <wbr class="w481"></wbr>would basically talk to the <wbr class="w961 w1799 w1800"></wbr>computer <wbr class="w480"></wbr>&#x2014; and <wbr class="w960"></wbr>it just do the thing it was suppose <wbr class="w481"></wbr>to do. As <wbr class="w480"></wbr>a kid in <wbr class="w960"></wbr>the late <wbr class="w961 w1799"></wbr>80's, my slim <wbr class="w1800"></wbr>experience with <wbr class="w480"></wbr>computers <wbr class="w960"></wbr>already <wbr class="w481"></wbr>taught me that we were a long way <wbr class="w480 w961 w1799"></wbr>from living <wbr class="w960"></wbr>in the Star Trek <wbr class="w1800"></wbr>future. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="580fa0ee-c996-4018-a6e2-c9b52ba8658d" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d"><div kind="group" index="column" class="group column group column" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-580fa0ee-c996-4018-a6e2-c9b52ba8658d-g-column-t-paragraph"><p><span class="first-letter">M</span>y first actual attempt at programming was with a <wbr class="w480 w960"></wbr>language called <a href="http://en.wikipedia.org/wiki/Logo_%28programming_language%29" data-href="http://en.wikipedia.org/wiki/Logo_%28programming_language%29">Logo</a>. We <wbr class="w481"></wbr>were <wbr class="w961 w1799"></wbr>already taught about <wbr class="w480 w1800"></wbr>the <wbr class="w960"></wbr>&#x201C;Turtle&#x201D; &#x2014; a flickering green triangle on a <wbr class="w480 w481 w960"></wbr>monochrome <wbr class="w961 w1799"></wbr>screen &#x2014; that didn&#x2019;t look like any turtle <wbr class="w480 w960 w1800"></wbr>I&#x2019;ve ever seen (granted, <wbr class="w481"></wbr>I was 6, but <wbr class="w961 w1799"></wbr>still &#x2014; that <wbr class="w480 w960"></wbr>did <strong>not</strong> look like a turtle). I was disappointed to <wbr class="w480 w481 w960 w1800"></wbr>learn all we <wbr class="w961 w1799"></wbr>ended up doing was what seemed to me <wbr class="w480"></wbr>like <wbr class="w960"></wbr>a very complicated way <wbr class="w481"></wbr>of drawing <wbr class="w961 w1799"></wbr>squares and <wbr class="w480 w1800"></wbr>circles. <wbr class="w960"></wbr>Little did I know, that was the foundation <wbr class="w480"></wbr>for <wbr class="w481 w960"></wbr>understanding <wbr class="w961 w1799"></wbr>how programs work, and that I <wbr class="w480 w1800"></wbr>would <wbr class="w960"></wbr>revisit these paradigms 24 <wbr class="w481"></wbr>years later.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="d2a18ce5-cd00-457e-b96f-db9c1cbc064e" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e"><div kind="group" index="column" class="group column group column" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-d2a18ce5-cd00-457e-b96f-db9c1cbc064e-g-column-t-paragraph"><p><span class="first-letter">B</span>y the time I was 9, I already got my first VGA <wbr class="w480 w960"></wbr>screen, and a brand new Intel <wbr class="w481 w961 w1799"></wbr>80386 computer, <wbr class="w480 w1800"></wbr>complete <wbr class="w960"></wbr>with a 4X (!) CD-ROM drive. Now I could <wbr class="w480"></wbr>take control <wbr class="w481 w960 w961 w1799"></wbr>over my very own Enterprise, Hear <wbr class="w480 w1800"></wbr>Indiana Jones speak <wbr class="w960"></wbr>for the first time, and <wbr class="w481"></wbr>I <wbr class="w961 w1799"></wbr>could <wbr class="w480"></wbr>finally enjoy Simon&#x2019;s <wbr class="w960"></wbr>snarky comments with a <wbr class="w1800"></wbr>proper <wbr class="w480"></wbr>British accent. Of <wbr class="w481 w960 w961 w1799"></wbr>course, all this fun couldn&#x2019;t <wbr class="w480"></wbr>last forever &#x2014; my Mom <wbr class="w960"></wbr>has decided I was <wbr class="w1800"></wbr>spending <wbr class="w481 w961 w1799"></wbr>too <wbr class="w480"></wbr>much of my time on <wbr class="w960"></wbr>mindless games. Knowing I <wbr class="w480"></wbr>wouldn&#x2019;t go down without a <wbr class="w481 w960 w961 w1799"></wbr>fight, she <wbr class="w1800"></wbr>decided to <wbr class="w480"></wbr>harness my obsession for games <wbr class="w960"></wbr>for educational <wbr class="w480"></wbr>purposes: <wbr class="w481 w961 w1799"></wbr>she gave me my first real <wbr class="w960 w1800"></wbr>programming tool <wbr class="w480"></wbr>ever: Klik & Play.</p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="ad16a9ad-9f59-4213-a3ba-d462b03f6b61" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61"><div kind="group" index="column" class="group column group column" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-ad16a9ad-9f59-4213-a3ba-d462b03f6b61-g-column-t-paragraph"><p><span class="first-letter">T</span>he thing about Klik & Play that kept me coming back <wbr class="w480 w960"></wbr>was how easy it was to <wbr class="w481"></wbr>work <wbr class="w961 w1799"></wbr>with. I could pretty <wbr class="w480 w1800"></wbr>much <wbr class="w960"></wbr>reason about most games I built, because there <wbr class="w480 w481"></wbr>was <wbr class="w960 w961 w1799"></wbr>almost no background knowledge required. The <wbr class="w480 w1800"></wbr>program <wbr class="w960"></wbr>came in a big white <wbr class="w481"></wbr>box, <wbr class="w961 w1799"></wbr>with a thick, <wbr class="w480"></wbr>detailed <wbr class="w960"></wbr>instruction book. Step by step, I learned <wbr class="w480 w1800"></wbr>about <wbr class="w481 w960 w961 w1799"></wbr>conditionals, about loops and functions &#x2014; <wbr class="w480"></wbr>without <wbr class="w960"></wbr>really learning any syntax <wbr class="w481"></wbr>of <wbr class="w961 w1799"></wbr>any particular <wbr class="w480 w1800"></wbr>language. <wbr class="w960"></wbr>Of course, I didn&#x2019;t know it at the time &#x2014; <wbr class="w480"></wbr>I didn&#x2019;t <wbr class="w481 w960"></wbr>even <wbr class="w961 w1799"></wbr>really think about <strong>how</strong> it worked, <wbr class="w1800"></wbr>only <wbr class="w480"></wbr>that it <wbr class="w960"></wbr>did. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="742bcf2a-3808-4d1c-a40e-7398dd698139" itemtype="h4" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139"><div kind="group" index="column" class="group column group column" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-742bcf2a-3808-4d1c-a40e-7398dd698139-g-column-t-paragraph"><p><span class="first-letter">A</span>s time passed, I learned more about my computer, <wbr class="w480"></wbr>and <wbr class="w960"></wbr>about other programming <wbr class="w481 w961 w1799"></wbr>languages. But there <wbr class="w1800"></wbr>was <wbr class="w480"></wbr>one <wbr class="w960"></wbr>language that dominated over all others: Visual <wbr class="w480 w481 w961 w1799"></wbr>Basic. <wbr class="w960"></wbr>It reminded me of the KnP interface &#x2014; <wbr class="w1800"></wbr>You <wbr class="w480"></wbr>create <wbr class="w960"></wbr>things on the screen, <wbr class="w481 w961 w1799"></wbr>and they do things. The <wbr class="w480"></wbr>code I <wbr class="w960"></wbr>had to plug into the various <wbr class="w1800"></wbr>components of <wbr class="w480"></wbr>the <wbr class="w481 w961 w1799"></wbr>page <wbr class="w960"></wbr>was almost like a black box to me. I <wbr class="w480"></wbr>understood parts <wbr class="w960"></wbr>of it, but mostly <wbr class="w481"></wbr>it <wbr class="w961 w1799"></wbr>was <wbr class="w1800"></wbr>no more <wbr class="w480"></wbr>than 2&#x2013;3 lines of <wbr class="w960"></wbr>code, making the component do very <wbr class="w480"></wbr>simple <wbr class="w481"></wbr>things. </p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">F</span>rom that point on, I was obsessed with programing &#x2014; <wbr class="w480 w960"></wbr>but things kept becoming <wbr class="w481 w961 w1799"></wbr>harder and harder for <wbr class="w1800"></wbr>me to <wbr class="w480 w960"></wbr>understand on my own. I kept using Visual Basic <wbr class="w481"></wbr>for <wbr class="w480 w961 w1799"></wbr>my <wbr class="w960"></wbr>own pet projects, but tried my best to <wbr class="w1800"></wbr>learn <wbr class="w480"></wbr>about C++ <wbr class="w960"></wbr>and Java. None <wbr class="w481"></wbr>of those <wbr class="w961 w1799"></wbr>really took &#x2014; I <wbr class="w480"></wbr>felt like the <wbr class="w960"></wbr>task was too daunting. I <wbr class="w1800"></wbr>basically <wbr class="w480 w481"></wbr>stopped <wbr class="w961 w1799"></wbr>programming <wbr class="w960"></wbr>altogether by the time I joined <wbr class="w480"></wbr>the army, and didn&#x2019;t <wbr class="w481 w960"></wbr>program again <wbr class="w961 w1799 w1800"></wbr>until 4 years <wbr class="w480"></wbr>later. </p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><h4>Innocence Lost</h4></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i w_paragraph w_text w_medium_paragraph w_medium_text stack column" itemid="2576dc40-7f07-4b12-8fb5-c99843674614" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-2576dc40-7f07-4b12-8fb5-c99843674614"><div kind="group" index="column" class="group column group column" id="u-2576dc40-7f07-4b12-8fb5-c99843674614-g-column"><div kind="text" index="paragraph" class="text-decoration medium medium_paragraph medium_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-2576dc40-7f07-4b12-8fb5-c99843674614-g-column-t-paragraph"><p><span class="first-letter">A</span>fter the break I took from programming, I came back <wbr class="w480 w960"></wbr>through the farthest <wbr class="w481"></wbr>thing <wbr class="w961 w1799"></wbr>from visual language <wbr class="w480 w960 w1800"></wbr>imaginable &#x2014; Bash. From that point on, I learned <wbr class="w481"></wbr>the <wbr class="w480 w960 w961 w1799"></wbr>languages everybody else was using around me &#x2014; <wbr class="w1800"></wbr>and <wbr class="w480 w960"></wbr>with every new <wbr class="w481"></wbr>language, I <wbr class="w961 w1799"></wbr>dove into a world of <wbr class="w480 w960"></wbr>dependencies, ever growing complexities and <wbr class="w480 w481 w1800"></wbr>functional <wbr class="w960 w961 w1799"></wbr>hierarchies. The full scale of what it <wbr class="w480"></wbr>meant to build <wbr class="w960"></wbr>a meaningful <wbr class="w481"></wbr>computer <wbr class="w961 w1799"></wbr>program made <wbr class="w1800"></wbr>me <wbr class="w480"></wbr>feel like I was <wbr class="w960"></wbr>only getting farther and farther <wbr class="w480"></wbr>from <wbr class="w481"></wbr>the Star <wbr class="w961 w1799"></wbr>Trek <wbr class="w960"></wbr>fantasy. </p></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="14adfe9e-737b-4ee5-8db3-a1d2b85436c6" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6"><div kind="group" index="column" class="group column group column" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-14adfe9e-737b-4ee5-8db3-a1d2b85436c6-g-column-t-paragraph"><p><span class="first-letter">M</span>y first big Bash program extracted information from <wbr class="w480 w960"></wbr>lines of logs, and <wbr class="w481"></wbr>created <wbr class="w961 w1799"></wbr>sanitized data for <wbr class="w480 w1800"></wbr>reports <wbr class="w960"></wbr>I built with Excel. Thinking back on it, <wbr class="w480 w481"></wbr>Excel started <wbr class="w960 w961 w1799"></wbr>as my main programming tool, using the <wbr class="w480 w1800"></wbr>very useful <wbr class="w960"></wbr>suite of <wbr class="w481"></wbr>built-in, (like <wbr class="w961 w1799"></wbr>VLOOKUP and <wbr class="w480"></wbr>others) &#x2014; <wbr class="w960"></wbr>building layers of ever shrinking data <wbr class="w480 w481 w1800"></wbr>sets <wbr class="w960"></wbr>represented on <wbr class="w961 w1799"></wbr>different sheets, each sheet <wbr class="w480"></wbr>with it&#x2019;s <wbr class="w960"></wbr>own set of <wbr class="w481"></wbr>responsibilities. With Bash, I <wbr class="w480 w961 w1799 w1800"></wbr>learned how <wbr class="w960"></wbr>to parse text, and how to apply <wbr class="w481"></wbr>logic to <wbr class="w480"></wbr>my process. <wbr class="w960"></wbr>My love affair <wbr class="w961 w1799"></wbr>with Bash didn&#x2019;t last <wbr class="w480 w1800"></wbr>very long. I was <wbr class="w481 w960"></wbr>trying to build more sophisticated <wbr class="w480 w961 w1799"></wbr>reports, and having <wbr class="w960"></wbr>my programming mojo <wbr class="w481"></wbr>partially <wbr class="w480 w1800"></wbr>back, it was time to <wbr class="w960"></wbr>move on. </p><wbr class="w480"></wbr><wbr class="w481"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><p><span class="first-letter">F</span>or next couple of years I used Perl and PHP <wbr class="w480 w960"></wbr>interchangeably. Mostly for <wbr class="w481"></wbr>building <wbr class="w961 w1799"></wbr>internal <wbr class="w480 w960"></wbr>reporting <wbr class="w1800"></wbr>tools, but I was really looking at <wbr class="w480"></wbr>becoming <wbr class="w960"></wbr>a Web <wbr class="w481"></wbr>Master. I <wbr class="w961 w1799"></wbr>started diving into PHP <wbr class="w480"></wbr>frameworks, <wbr class="w960"></wbr>and <wbr class="w1800"></wbr>discovered Drupal, <wbr class="w481"></wbr>Wordpress, and <wbr class="w480"></wbr>later <wbr class="w961 w1799"></wbr>on <wbr class="w960"></wbr>CodeIgniter and Symphony.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-alternate-g-heading-t-headline-a">SchwabCo feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-desktop-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_subtitle w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_subtitle w_medium_paragraph w_medium_text w_long_paragraph w_long_text layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-cinema-l-one-3-l-one"></div><style id="u-b14c9fdb-28bc-427f-b00d-61c64b238383-color">body{background-color: rgba(0, 0, 0, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1780,7 +1844,7 @@ module.exports = function() {
 
 
 },{}],5:[function(require,module,exports){
-var cache, fade, frames, hiding, highlighting, showing;
+var Hide, Show, cache, fade, frames, hiding, highlighting, showing;
 
 highlighting = showing = hiding = null;
 
@@ -1807,40 +1871,69 @@ fade = function(element, to, from) {
   return frames[element.id] = requestAnimationFrame(Frame);
 };
 
+document.body.addEventListener('mousemove', function(e) {});
+
+Hide = function(target) {
+  clearTimeout(showing);
+  setTimeout(function() {
+    if (hiding !== target) {
+      hiding.style.backgroundImage = cache[hiding.id];
+      return delete cache[hiding.id];
+    }
+  }, 300);
+  hiding = highlighting;
+  highlighting = null;
+  return fade(hiding.getElementsByTagName('img')[0], 1);
+};
+
+Show = function(target, x, y, img) {
+  var colors, value;
+  if (target !== highlighting) {
+    clearTimeout(showing);
+    showing = setTimeout(function() {
+      if (highlighting === target) {
+        return fade(img, 0.8);
+      }
+    }, 150);
+  }
+  if ((value = cache[target.id]) == null) {
+    cache[target.id] = value = window.getComputedStyle(target)['background-image'];
+  }
+  if (value.indexOf('linear-gradient') > -1) {
+    colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
+    if (colors[1].indexOf('rgba') > -1) {
+      colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
+    } else {
+      colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
+    }
+    value = 'radial-gradient(circle at ' + x + 'px ' + y + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
+  } else {
+    return;
+  }
+  target.style.backgroundImage = value;
+  return highlighting = target;
+};
+
+document.body.addEventListener('click', function(e) {
+  if (highlighting) {
+    return Hide(highlighting);
+  }
+});
+
 document.body.addEventListener('mousemove', function(e) {
-  var clientX, clientY, colors, img, parent, ref, target, value;
+  var clientX, clientY, img, parent, ref, target;
   target = e.target;
   while (target) {
-    if (target.tagName === 'A' && target.classList.contains('media')) {
+    if (target.tagName === 'A' && target.classList.contains('media') && !target.classList.contains('revealed')) {
       break;
     }
     target = target.parentNode;
   }
   if (highlighting && highlighting !== target) {
-    clearTimeout(showing);
-    setTimeout(function() {
-      if (hiding !== target) {
-        hiding.style.backgroundImage = cache[hiding.id];
-        return delete cache[hiding.id];
-      }
-    }, 300);
-    hiding = highlighting;
-    highlighting = null;
-    fade(hiding.getElementsByTagName('img')[0], 1);
+    Hide(highlighting);
   }
   if (target) {
     if ((ref = (img = target.getElementsByTagName('img')[0])) != null ? ref.complete : void 0) {
-      if (target !== highlighting) {
-        clearTimeout(showing);
-        showing = setTimeout(function() {
-          if (highlighting === target) {
-            return fade(img, 0.8);
-          }
-        }, 150);
-      }
-      if ((value = cache[target.id]) == null) {
-        cache[target.id] = value = window.getComputedStyle(target)['background-image'];
-      }
       clientX = e.pageX;
       clientY = e.pageY;
       parent = target;
@@ -1849,19 +1942,7 @@ document.body.addEventListener('mousemove', function(e) {
         clientY -= parent.offsetTop;
         parent = parent.offsetParent;
       }
-      if (value.indexOf('linear-gradient') > -1) {
-        colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
-        if (colors[1].indexOf('rgba') > -1) {
-          colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
-        } else {
-          colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
-        }
-        value = 'radial-gradient(circle at ' + clientX + 'px ' + clientY + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
-      } else {
-        return;
-      }
-      target.style.backgroundImage = value;
-      return highlighting = target;
+      return Show(target, clientX, clientY, img);
     }
   }
 });
@@ -2009,11 +2090,13 @@ module.exports = function() {
 
 
 },{"./reflow":9}],8:[function(require,module,exports){
-var Player, Youtube, iframe, revealed, rgb2hex;
+var Player, Youtube, iframe, reflow, revealed, rgb2hex;
 
 iframe = null;
 
 Youtube = null;
+
+reflow = require('./reflow');
 
 Player = function(id, src, width, height, color, bg) {
   if (src.indexOf('youtube') > -1) {
@@ -2022,6 +2105,8 @@ Player = function(id, src, width, height, color, bg) {
   src = src.replace('COLOR', color).replace('BG', bg);
   if (location.protocol !== 'https:') {
     src = src.replace('https:', 'http:');
+  } else {
+    src = src.replace('http:', 'https:');
   }
   iframe = document.createElement('iframe');
   iframe.id = id;
@@ -2034,79 +2119,294 @@ Player = function(id, src, width, height, color, bg) {
   iframe.style.left = 0;
   iframe.style.right = 0;
   iframe.style.position = 'absolute';
-  iframe.style.opacity = 0.2;
+  iframe.style.opacity = 0;
   iframe.onload = function() {
-    return iframe.style.opacity = 1;
+    return iframe.showing = setTimeout(function() {
+      iframe.classList.add('loaded');
+      iframe.style.display = '';
+      iframe.showing = setTimeout(function() {
+        iframe.style.opacity = 1;
+        return iframe.showing = setTimeout(function() {
+          return typeof iframe.onloaded === "function" ? iframe.onloaded(true) : void 0;
+        }, 500);
+      }, 1);
+      return typeof iframe.onloaded === "function" ? iframe.onloaded() : void 0;
+    }, 300);
   };
   return iframe;
 };
 
 revealed = null;
 
-Player.reveal = function(iframe) {
-  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
-  while (target = (target || iframe).parentNode) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (target.parentNode.classList.contains('group')) {
-        parent = target.parentNode;
-      } else {
-        parent = target;
+Player.findMedia = function(iframe) {
+  var i, len, media, ref, ref1, ref2, sibling;
+  if (iframe.parentNode) {
+    ref = iframe.parentNode.childNodes;
+    for (i = 0, len = ref.length; i < len; i++) {
+      sibling = ref[i];
+      if ((ref1 = sibling.classList) != null ? ref1.contains('media') : void 0) {
+        return sibling;
       }
-      revealed = iframe;
-      play = parent.getElementsByClassName('play')[0];
-      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
-      top = -play.offsetTop;
-      play.style.webkitTransformOrigin = 'top right';
-      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
-      target.classList.add('revealed');
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        if (sibling.nodeType === 1 && sibling !== parent) {
-          translateX = translateY = null;
-          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
-            translateX = -diff;
-          }
-          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
-            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
-              translateX = diff;
-            }
-          }
-          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
-            translateY = -diff;
-          }
-          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
-            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
-              translateY = diff;
-            }
-          }
-          if (Math.abs(translateX) > Math.abs(translateY)) {
-            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
-          } else {
-            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
-          }
-          console.log(translateX, translateY, sibling);
-        }
+    }
+    while (media = (media || iframe).parentNode) {
+      if ((ref2 = media.classList) != null ? ref2.contains('media') : void 0) {
+        return media;
       }
     }
   }
 };
 
+Player.getClipRect = function(img, media) {
+  var rect;
+  rect = {};
+  rect.left = -img.offsetLeft;
+  rect.right = -img.offsetLeft + img.parentNode.offsetWidth;
+  rect.top = -img.offsetTop;
+  rect.bottom = img.offsetTop + img.parentNode.offsetHeight;
+  return rect;
+};
+
+Player.rect = function(rect) {
+  return 'rect(' + rect.top + 'px,' + rect.right + 'px,' + rect.bottom + 'px,' + rect.left + 'px)';
+};
+
+Player.set = function(element, property, value) {
+  var webkit;
+  webkit = 'webkit' + property.charAt(0).toUpperCase() + property.substring(1);
+  if (element.style[webkit] != null) {
+    return element.style[webkit] = value;
+  } else {
+    return element.style[property] = value;
+  }
+};
+
+Player.reveal = function(iframe, instant) {
+  var firstTime, img, layout, left, media, offsetLeft, offsetTop, parent, play, ratio, rectLeft, rectRight, ref, root, shiftLeft, stack, targetHeight, targetWidth, top, translateX, translateY, zoom;
+  iframe.style.maxHeight = window.innerHeight + 'px';
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      root = stack = media;
+      while (root = root.parentNode) {
+        if (root.classList.contains('stack')) {
+          stack = root;
+        }
+        if (root.classList.contains('layout-system')) {
+          break;
+        }
+      }
+      layout = reflow.getLayout(root, stack);
+      console.log('get layout', root, stack, layout);
+      img = media.querySelector('picture, img');
+      offsetLeft = media.offsetLeft;
+      offsetTop = media.offsetTop;
+      if (media.parentNode.classList.contains('group')) {
+        parent = media.parentNode;
+        offsetLeft += parent.offsetLeft;
+        offsetTop += parent.offsetTop;
+      } else {
+        parent = media;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      Player.set(play, 'transformOrigin', 'top right');
+      if (!media.classList.contains('revealed')) {
+        firstTime = true;
+        media.classList.add('revealed');
+      }
+      if (layout && (layout.offsetWidth > media.offsetWidth * 2.5 || media.offsetWidth < 350 || media.offsetHeight < 200) && iframe.src.indexOf('soundcloud') === -1) {
+        if (firstTime) {
+          Player.set(img, 'transition', 'none');
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          return requestAnimationFrame(function() {
+            Player.set(img, 'transition', '');
+            return requestAnimationFrame(function() {
+              return Player.reveal(iframe);
+            });
+          });
+        }
+        iframe.style.zIndex = 6;
+        media.classList.add('expanded');
+        translateX = -offsetLeft - stack.offsetLeft;
+        translateY = -offsetTop - stack.offsetTop;
+        if (stack.parentNode !== layout) {
+          translateX += layout.offsetLeft + layout.parentNode.offsetLeft;
+          translateY += layout.offsetTop + layout.parentNode.offsetTop;
+        }
+        Player.set(img, 'transform', img.style.transform = 'translateX(' + (translateX - img.offsetLeft) + 'px) ' + 'translateY(' + (translateY - img.offsetTop) + 'px) ');
+        if (img) {
+          Player.set(media, 'transformOrigin', 'top left');
+          Player.set(img, 'transformOrigin', 'top left');
+          ratio = img.offsetWidth / img.offsetHeight;
+          targetHeight = Math.min(layout.offsetHeight, window.innerHeight);
+          targetWidth = ratio * targetHeight;
+          console.log(layout, layout.offsetHeight, targetHeight, 44444);
+          iframe.style.left = translateX + media.offsetLeft + 'px';
+          iframe.style.top = translateY + media.offsetTop + 'px';
+          iframe.style.width = layout.offsetWidth + 'px';
+          iframe.style.height = layout.offsetHeight + 'px';
+          zoom = targetHeight / img.offsetHeight;
+          shiftLeft = (layout.offsetWidth - targetWidth) / 2;
+          rectLeft = rectRight = Math.max(0, -shiftLeft / zoom);
+          if (media.style.overflow !== 'visible') {
+            requestAnimationFrame(function() {
+              media.style.overflow = 'visible';
+              stack.style.overflow = 'visible';
+              img.style.clip = Player.rect(Player.getClipRect(img));
+              return requestAnimationFrame(function() {
+                return img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+              });
+            });
+          } else {
+            img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+          }
+          if (img.style.webkitTransform) {
+            img.style.webkitTransform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          } else if (img.style.transform) {
+            img.style.transform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          }
+          left = translateX + layout.offsetWidth - play.offsetLeft - play.offsetWidth;
+          top = translateY - play.offsetTop;
+          Player.set(play, 'transform', 'translateX(' + (left - 10) + 'px) ' + 'translateY(' + (top + 10) + 'px) ' + 'scale(0.5)');
+        }
+        stack.style.zIndex = 10;
+        if (iframe.style.opacity === 1) {
+          Player.fade(parent, true, media);
+        } else {
+          iframe.onloaded = function(full) {
+            return Player.fade(parent, full, media);
+          };
+        }
+      } else {
+        media.classList.remove('expanded');
+        left = media.offsetWidth - play.offsetLeft - play.offsetWidth;
+        top = -play.offsetTop;
+        Player.set(play, 'transform', 'translateX(' + (left - 5) + 'px) translateY(' + (top + 5) + 'px) scale(0.5)');
+        iframe.style.left = media.offsetLeft + 'px';
+        iframe.style.top = media.offsetTop + 'px';
+        iframe.style.width = media.offsetWidth + 'px';
+        iframe.style.height = media.offsetHeight + 'px';
+        if (iframe.style.opacity === 1) {
+          img.style.opacity = 0;
+        } else {
+          iframe.onloaded = function(full) {
+            console.error('ONLOADED', full);
+            if (full) {
+              return img.style.opacity = 0;
+            } else {
+              return img.style.opacity = 0.8;
+            }
+          };
+        }
+        Player.expose(parent);
+      }
+    }
+  }
+};
+
+Player.fade = function(parent, full, media) {
+  var i, len, ref, results, sibling;
+  if (media) {
+    sibling = media.querySelector('picture, img');
+    if (full) {
+      sibling.style.opacity = 0;
+    }
+  }
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME' && !sibling.classList.contains('play')) {
+      if (full) {
+        results.push(sibling.style.opacity = 0);
+      } else {
+        results.push(sibling.style.opacity = 0.8);
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
+Player.expose = function(parent) {
+  var diff, i, len, ref, results, sibling, translateX, translateY;
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME') {
+      translateX = translateY = null;
+      if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+        translateX = -diff - 2;
+      }
+      if ((diff = parent.offsetLeft + parent.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+        if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+          translateX = diff + 2;
+        }
+      }
+      if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+        translateY = -diff - 2;
+      }
+      if ((diff = parent.offsetTop + parent.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+        if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+          translateY = diff + 2;
+        }
+      }
+      if (Math.abs(translateX) > Math.abs(translateY)) {
+        results.push(Player.set(sibling, 'transform', 'translateY(' + translateY + 'px)'));
+      } else {
+        results.push(Player.set(sibling, 'transform', 'translateX(' + translateX + 'px)'));
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
 Player.hide = function(iframe) {
-  var i, len, parent, play, ref, ref1, sibling;
-  while (parent = (parent || iframe).parentNode) {
-    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
-      parent.classList.remove('revealed');
+  var child, i, img, j, len, len1, media, parent, play, ref, ref1, ref2, ref3, sibling;
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('revealed') : void 0) {
+      media.classList.remove('revealed');
+      media.classList.remove('expanded');
+      Player.set(media, 'transform', '');
+      if (img = media.querySelector('picture, img')) {
+        img.style.zIndex = '';
+        img.style.opacity = '';
+        if (media.style.overflow === 'visible') {
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          setTimeout(function() {
+            img.style.clip = '';
+            return media.style.overflow = '';
+          }, 300);
+        }
+      }
+      ref1 = media.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        child = ref1[i];
+        Player.set(child, 'transform', '');
+      }
+      parent = media;
       if (parent.parentNode.classList.contains('group')) {
         parent = parent.parentNode;
       }
       play = parent.getElementsByClassName('play')[0];
-      play.style.webkitTransform = '';
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        sibling.style.webkitTransform = '';
+      play.style.zIndex = '';
+      Player.set(play, 'transform', '');
+      ref2 = parent.parentNode.childNodes;
+      for (j = 0, len1 = ref2.length; j < len1; j++) {
+        sibling = ref2[j];
+        if (sibling.nodeType === 1 && sibling !== iframe) {
+          Player.set(sibling, 'transform', '');
+          sibling.style.opacity = '';
+        }
       }
+      if (!((ref3 = (parent = parent.parentNode).classList) != null ? ref3.contains('stack') : void 0)) {
+        parent = parent.parentNode;
+      }
+      parent.style.zIndex = '';
+      parent.style.visible = '';
     }
   }
   return revealed = null;
@@ -2130,29 +2430,32 @@ Player.stop = function(iframe) {
   var old;
   old = iframe;
   iframe.style.opacity = 0;
+  iframe.style.width = iframe.offsetWidth + 'px';
+  iframe.style.height = iframe.offsetHeight + 'px';
   setTimeout(function() {
     var ref;
     return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
   }, 300);
+  clearTimeout(iframe.showing);
   Player.hide(iframe);
   return iframe = null;
 };
 
 document.addEventListener('click', function(e) {
-  var bg, color, header, parent, play, ref, ref1, results, styles, target;
-  target = e.target;
+  var bg, color, header, media, parent, play, ref, ref1, results, styles;
+  media = e.target;
   results = [];
-  while (target) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (play = target.getElementsByClassName('play')[0]) {
-        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+  while (media) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      if (play = media.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === media || (iframe != null ? iframe.parentNode : void 0) === media.parentNode) {
           Player.stop(iframe);
         } else {
           if (iframe) {
             Player.stop(iframe);
           }
           color = bg = null;
-          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          header = (ref1 = media.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
           parent = header || play;
           while (parent) {
             if (parent.nodeType === 1) {
@@ -2171,14 +2474,14 @@ document.addEventListener('click', function(e) {
             parent = parent.parentNode;
           }
           iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
-          target.appendChild(iframe);
+          media.parentNode.insertBefore(iframe, media);
           Player.reveal(iframe);
         }
         e.preventDefault();
         break;
       }
     }
-    results.push(target = target.parentNode);
+    results.push(media = media.parentNode);
   }
   return results;
 });
@@ -2193,7 +2496,7 @@ rgb2hex = function(rgb) {
 window.exports = window.Player = Player;
 
 
-},{}],9:[function(require,module,exports){
+},{"./reflow":9}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
